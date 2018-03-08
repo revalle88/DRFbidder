@@ -12,3 +12,13 @@ class Campaign(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class Keyword(models.Model):
+	keyword = models.CharField(max_length=128)
+	directId = models.CharField(max_length=128)
+	bid = models.CharField(max_length=128)
+	campaign = models.ForeignKey(Campaign, on_delete = models.CASCADE)
+
+
+	def __str__(self):
+		return self.keyword

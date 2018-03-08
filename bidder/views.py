@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from bidder.models import  Campaign
-from rest_framework import viewsets
-from bidder.serializers import UserSerializer, GroupSerializer, CampaignSerializer
+from bidder.models import  Campaign, Keyword
+from rest_framework import viewsets, generics
+from bidder.serializers import UserSerializer, GroupSerializer, CampaignSerializer, KeywordSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -26,3 +26,34 @@ class CampaignViewSet(viewsets.ModelViewSet):
     """
     queryset = Campaign.objects.all()
     serializer_class = CampaignSerializer
+
+class KeywordList(generics.ListAPIView):
+    model = Keyword
+    queryset = Keyword.objects.all()
+    serializer_class = KeywordSerializer
+
+class KeywordDetail(generics.RetrieveAPIView):
+    model = Keyword
+    queryset = Keyword.objects.all()
+    serializer_class = KeywordSerializer
+    lookup_field = 'keyword'
+'''
+class KeywordViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Keyword.objects.all()
+    serializer_class = KeywordSerializer
+
+    def get_queryset(self):
+        campaign = self.kwargs['campaign']
+        return Keyword.objects.filter(pcampaign__directId=campaign)
+ '''       
+
+class CampaignKeywordList(generics.ListAPIView):
+    model = Keyword
+    serializer_class = KeywordSerializer
+    #queryset = Keyword.objects.filter(campaign__directId=self.kwargs.get('directId'))
+    def get_queryset(self):
+        #queryset = super(CampaignKeywordList, self).get_queryset()
+        return Keyword.objects.filter(campaign__directId=self.kwargs.get('directId'))

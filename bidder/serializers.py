@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from bidder.models import Campaign
+from bidder.models import Campaign, Keyword
 from rest_framework import serializers
 
 
@@ -14,7 +14,12 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
-class CampaignSerializer(serializers.HyperlinkedModelSerializer):
+class CampaignSerializer(serializers.ModelSerializer):
     class Meta:
         model = Campaign
-        fields = ('url', 'name', 'directId')
+        fields = ('name', 'directId')
+
+class KeywordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Keyword
+        fields = ('keyword', 'campaign', 'directId', 'bid')
