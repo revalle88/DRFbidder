@@ -134,7 +134,7 @@ def keywords(request, campaign_id):
 			for keyword in result.json()["result"]["Keywords"]:
 				print("Step")
 				print("Keyword: {} №{} Bid:{}".format(u(keyword['Keyword']), keyword['Id'], keyword['Bid']))
-				kwd = Keyword(directId=keyword['Id'], keyword=keyword['Keyword'], campaign = cmp )
+				kwd = Keyword(directId=keyword['Id'], keyword=keyword['Keyword'], bid = keyword['Bid'], campaign = cmp )
 				kwd.save()
 			if result.json()['result'].get('LimitedBy', False):
 			# Если ответ содержит параметр LimitedBy, значит,  были получены не все доступные объекты.

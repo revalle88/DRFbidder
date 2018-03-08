@@ -26,7 +26,7 @@ class CampaignViewSet(viewsets.ModelViewSet):
     """
     queryset = Campaign.objects.all()
     serializer_class = CampaignSerializer
-
+'''
 class KeywordList(generics.ListAPIView):
     model = Keyword
     queryset = Keyword.objects.all()
@@ -44,11 +44,11 @@ class KeywordViewSet(viewsets.ModelViewSet):
     """
     queryset = Keyword.objects.all()
     serializer_class = KeywordSerializer
-
+'''
     def get_queryset(self):
         campaign = self.kwargs['campaign']
         return Keyword.objects.filter(pcampaign__directId=campaign)
- '''       
+'''      
 
 class CampaignKeywordList(generics.ListAPIView):
     model = Keyword

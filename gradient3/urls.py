@@ -19,19 +19,19 @@ from django.views.generic import TemplateView
 from rest_framework import routers
 from django.conf.urls import url, include
 from bidder import views
-from bidder.views import CampaignKeywordList, KeywordList, KeywordDetail
+from bidder.views import CampaignKeywordList, KeywordViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'campaigns', views.CampaignViewSet)
-#router.register(r'keywords', views.KeywordViewSet)
+router.register(r'keywords', views.KeywordViewSet)
 
 urlpatterns = [
   path('admin/', admin.site.urls),
   path('yandex/', include('yandex.urls')),
 
-  url(r'^/(?P<keyword>[0-9a-zA-Z_-]+)$', KeywordDetail.as_view(), name='keyword-detail'),
+  #url(r'^/(?P<keyword>[0-9a-zA-Z_-]+)$', KeywordDetail.as_view(), name='keyword-detail'),
   #url(r'^api/keywords$', KeywordList.as_view(), name = 'keyword-list'),
 
 
