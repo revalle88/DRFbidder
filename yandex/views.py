@@ -126,7 +126,7 @@ def keywords(request, campaign_id):
 			print("Описание ошибки: {}".format(u(result.json()["error"]["error_detail"])))
 			print("RequestId: {}".format(result.headers.get("RequestId", False)))
 		else:
-			Keyword.objects.all().delete()
+			Keyword.objects.filter(campaign=cmp).delete()
 			print("RequestId: {}".format(result.headers.get("RequestId", False)))
 			print("Информация о баллах: {}".format(result.headers.get("Units", False)))
 			# Вывод списка кампаний

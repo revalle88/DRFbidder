@@ -25,7 +25,7 @@ SECRET_KEY = '4167ba=9ntvrk!!7@^3ry$%8_wc1da*$4n#3p7^1k2p=tw2ky3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['slide58.pythonanywhere.com']
+ALLOWED_HOSTS = ['slide58.pythonanywhere.com', 'localhost']
 
 
 # Application definition
