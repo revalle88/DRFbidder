@@ -38,7 +38,7 @@ urlpatterns = [
   re_path('api/(?P<directId>[0-9a-zA-Z_-]+)/keywords', CampaignKeywordList.as_view(), name = 'keyword-list'),
   path('api/', include('bidder.urls')),
   path('api/', include(router.urls)),
-  #re_path('.*', TemplateView.as_view(template_name='index.html')),
+  re_path('.*', TemplateView.as_view(template_name='index.html')),
   #url(r'^', include(router.urls)),
  
 ]

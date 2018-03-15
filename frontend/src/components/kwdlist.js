@@ -1,9 +1,9 @@
-/*import React, { Component } from 'react';
+import React, { Component } from 'react';
 
 
 
      
-    class App extends Component {
+    class Kwdlist extends Component {
         constructor() {
             super();
             this.state = { 
@@ -12,9 +12,7 @@
         }
         
         componentDidMount() {
-       
-          //.then(data=>console.log(data));
-            fetch('http://localhost:8000/api/campaigns/') 
+            fetch('http://slide58.pythonanywhere.com/api/keywords/')
             .then(response => response.json())
             .then(data => this.setState({ data: data }));
                
@@ -23,12 +21,12 @@
         render() {        
             return(
                 <div>
-                    <div>Itemsss:</div>
-                    { this.state.data.map(item=> { return <div>{item.name}</div>}) }          
+                    <div><b>Ключевики</b>:</div>
+                    { this.state.data.map(item=> { return <div>{item.keyword}</div>}) }          
                 </div>  
             );
         }
     }
 
 
-export default App;*/
+export default Kwdlist;
