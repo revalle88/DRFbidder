@@ -86,7 +86,7 @@ def index(request):
 
 	campaign_list = Campaign.objects.all()
 	print (campaign_list)
-	return HttpResponse("Информация обновлена. <a href = #>Вернитесь на главную.</a>")
+	return HttpResponse("Информация обновлена. <a href = 'http://slide58.pythonanywhere.com'>Вернитесь на главную.</a>")
 
 	'''
 	CampaignsListData={}
@@ -152,4 +152,4 @@ def keywords(request, campaign_id):
 
 	#keyword_list = Keyword.objects.all()
 	#print (keyword_list)
-	return HttpResponse("Информация обновлена. <a href = #>Вернитесь на главную.</a>")
+	return HttpResponse("Информация обновлена. <a href = 'http://slide58.pythonanywhere.com'>Вернитесь на главную.</a>")
