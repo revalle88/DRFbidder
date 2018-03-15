@@ -22,7 +22,7 @@ import React, { Component } from 'react';
             return(
                 <div>
                     <div><b>Мои Кампании</b>:</div>
-                    { this.state.data.map(item=> { return <div>{item.name} <a href = {'http://slide58.pythonanywhere.com/yandex/keywords/'+item.directId}>Обновить ключевики с директа №{item.directId}</a></div>}) }          
+                    { this.state.data.map(item=> { return <div>{item.name} <a href = {'http://slide58.pythonanywhere.com/yandex/keywords/'+item.directId+'/'}>Обновить ключевики с директа №{item.directId}</a></div>}) }          
                 </div>  
             );
         }

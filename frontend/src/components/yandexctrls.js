@@ -6,7 +6,7 @@ const Yandex = () => {
 	
 	<div><br/>	
 		<b>Соединение с Yandex Direct:  </b>
-		<a href = 'http://slide58.pythonanywhere.com/api/campaigns'> Обновить информацию о Кампаниях</a><br/>		
+		<a href = 'http://slide58.pythonanywhere.com/yandex/'> Обновить информацию о Кампаниях</a><br/>		
 	</div>
 	)
 }
