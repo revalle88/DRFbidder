@@ -29,7 +29,12 @@ import React, { Component } from 'react';
             return(
                 <div>
                     <div><b>Ключевики для компании №: </b> { this.props.cmpId}:</div>
-                    { this.props.kwdList.map(item=> { return <div>{item.keyword}</div>}) }          
+                    <table>
+                    <tr>
+                    	<th>Кампания | </th><th>ID фразы | </th><th>Ключ | </th><th>Ставка</th>
+                    </tr>
+                    { this.props.kwdList.map(item=> { return <tr><td>{item.campaign}  </td><td>{item.directId}  </td><td>{item.keyword}  </td><td>{item.bid}</td></tr>}) }    
+                    </table>      
                 </div>  
             );
         }
