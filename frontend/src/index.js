@@ -20,9 +20,7 @@ const App = () =>{
 		<div>
 			<Yandex/>
 		</div><br/>
-		<div>
-			<Kwdlist/>
-		</div>
+		
 		
 	</div>
 	)

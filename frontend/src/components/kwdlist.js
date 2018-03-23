@@ -12,17 +12,24 @@ import React, { Component } from 'react';
         }
         
         componentDidMount() {
-            fetch('http://slide58.pythonanywhere.com/api/keywords/')
+            //this.fetchData();
+               
+        }
+
+        fetchData = () => {
+        	var urladdress = 'http://slide58.pythonanywhere.com/api/keywords/';
+            fetch(urladdress)
             .then(response => response.json())
             .then(data => this.setState({ data: data }));
                
+
         }
         
         render() {        
             return(
                 <div>
-                    <div><b>Ключевики</b>:</div>
-                    { this.state.data.map(item=> { return <div>{item.keyword}</div>}) }          
+                    <div><b>Ключевики для компании №: </b> { this.props.cmpId}:</div>
+                    { this.props.kwdList.map(item=> { return <div>{item.keyword}</div>}) }          
                 </div>  
             );
         }
