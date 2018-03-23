@@ -29,7 +29,7 @@ import React, { Component } from 'react';
             return(
                 <div>
                     <div><b>Ключевики для компании №: </b> { this.props.cmpId}:</div>
-                    <table>
+                    <table class = 'table'>
                     <tr>
                     	<th>Кампания | </th><th>ID фразы | </th><th>Ключ | </th><th>Ставка</th>
                     </tr>
